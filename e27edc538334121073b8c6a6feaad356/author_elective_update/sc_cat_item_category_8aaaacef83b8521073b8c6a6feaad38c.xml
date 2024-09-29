@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category">
+    <sc_cat_item_category action="DELETE">
+        <sc_cat_item display_value="TMLabs CI Service Import">a090d4a38334521073b8c6a6feaad3d0</sc_cat_item>
+        <sc_category display_value="Information">d2f73e24c611227a002f7cfedd0aa9e5</sc_category>
+        <sys_class_name>sc_cat_item_category</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-28 07:31:01</sys_created_on>
+        <sys_id>8aaaacef83b8521073b8c6a6feaad38c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Information.TMLabs CI Service Import</sys_name>
+        <sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs">e27edc538334121073b8c6a6feaad356</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope>
+        <sys_update_name>sc_cat_item_category_8aaaacef83b8521073b8c6a6feaad38c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-28 07:31:01</sys_updated_on>
+    </sc_cat_item_category>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</application>
+        <file_path/>
+        <instance_id>c52434c7dbb006182f082a59139619c3</instance_id>
+        <instance_name>dev240362</instance_name>
+        <name>sc_cat_item_category_8aaaacef83b8521073b8c6a6feaad38c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category"><sc_cat_item_category action="INSERT_OR_UPDATE"><sc_cat_item display_value="TMLabs CI Service Import">a090d4a38334521073b8c6a6feaad3d0</sc_cat_item><sc_category display_value="Information">d2f73e24c611227a002f7cfedd0aa9e5</sc_category><sys_class_name>sc_cat_item_category</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-09-28 07:31:01</sys_created_on><sys_id>8aaaacef83b8521073b8c6a6feaad38c</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Information.TMLabs CI Service Import</sys_name><sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs">e27edc538334121073b8c6a6feaad356</sys_package><sys_policy/><sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope><sys_update_name>sc_cat_item_category_8aaaacef83b8521073b8c6a6feaad38c</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-09-28 07:31:01</sys_updated_on></sc_cat_item_category></record_update>]]></payload>
+        <payload_hash>-1553247750</payload_hash>
+        <record_name>Information.TMLabs CI Service Import</record_name>
+        <reverted_from/>
+        <source>627e1c978338121073b8c6a6feaad39b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-28 07:31:02</sys_created_on>
+        <sys_id>c2aaacef83b8521073b8c6a6feaad3ee</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>192378a479f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-28 07:31:02</sys_updated_on>
+        <type>Catalog Item Category</type>
+        <update_guid>86aaacef59b852100943ea75e9c3a4ed</update_guid>
+        <update_guid_history>86aaacef59b852100943ea75e9c3a4ed:-1553247750</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Information.TMLabs CI Service Import">86250da783b0921073b8c6a6feaad37b</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-28 09:26:48</sys_created_on>
+        <sys_db_object display_value="" name="sc_cat_item_category">sc_cat_item_category</sys_db_object>
+        <sys_id>772009060d7147e2b7e0ec7ba44fef64</sys_id>
+        <sys_metadata>8aaaacef83b8521073b8c6a6feaad38c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Information.TMLabs CI Service Import</sys_name>
+        <sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs">e27edc538334121073b8c6a6feaad356</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope>
+        <sys_scope_delete display_value="">78a7d328f56b4de295623eee00c38e24</sys_scope_delete>
+        <sys_update_name>sc_cat_item_category_8aaaacef83b8521073b8c6a6feaad38c</sys_update_name>
+        <sys_update_version display_value="sc_cat_item_category_8aaaacef83b8521073b8c6a6feaad38c">c2aaacef83b8521073b8c6a6feaad3ee</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-28 09:26:48</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

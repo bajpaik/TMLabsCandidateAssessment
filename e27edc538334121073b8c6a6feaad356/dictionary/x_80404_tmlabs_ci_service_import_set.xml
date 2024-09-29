@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="f7a9ff93837c121073b8c6a6feaad325" extends="sys_import_set_row" label="CI Service Import Set" max_length="40" name="x_80404_tmlabs_ci_service_import_set" type="collection">
+        <element label="Approval Group" max_length="40" name="approval_group" type="string"/>
+        <element label="Name" max_length="40" name="name" type="string"/>
+        <element label="Operational Status" max_length="40" name="operational_status" type="string"/>
+        <element label="Service Classification" max_length="40" name="service_classification" type="string"/>
+        <element label="Owned By" max_length="40" name="owned_by" type="string"/>
+        <element label="Business Criticality" max_length="40" name="business_criticality" type="string"/>
+    </element>
+</database>
