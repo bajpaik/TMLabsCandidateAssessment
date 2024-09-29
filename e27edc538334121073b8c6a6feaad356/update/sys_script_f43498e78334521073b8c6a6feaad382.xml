@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_80404_tmlabs_ci_service_import</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_80404_tmlabs_ci_service_import">status=^EQ<item display_value="-- None --" endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value=""/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>TMLabs - Check for valid attachments</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+
+    // Add your code here
+    var hasValidAttachment = false;
+    var attachCount = new GlideRecord('sys_attachment');
+    attachCount.addQuery('table_sys_id', current.sys_id);
+    attachCount.addQuery('content_type', 'CONTAINS', 'xlsx').addOrCondition('content_type', 'CONTAINS', 'spreadsheet').addOrCondition('content_type', 'CONTAINS', 'csv');
+    attachCount.query();
+    // if no other attachments task does not have attachment
+    if (!attachCount.next() || attachCount.getRowCount() == 0) {
+        gs.addErrorMessage('Please attach the spreadsheet in the required format');
+    } else {
+        if (attachCount.getRowCount() > 1)
+            gs.addErrorMessage('More than one spreadsheet not allowed');
+        else {
+            hasValidAttachment = true;
+        }
+    }
+
+    if (!hasValidAttachment && current.operation() == 'insert') {
+        current.setAbortAction(true);
+    }
+	
+    if (hasValidAttachment)
+        current.status = '1'; // set to open state
+
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-28 05:54:49</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f43498e78334521073b8c6a6feaad382</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>TMLabs - Check for valid attachments</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs">e27edc538334121073b8c6a6feaad356</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope>
+        <sys_update_name>sys_script_f43498e78334521073b8c6a6feaad382</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-28 08:37:27</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=f43498e78334521073b8c6a6feaad382"/>
+</record_update>

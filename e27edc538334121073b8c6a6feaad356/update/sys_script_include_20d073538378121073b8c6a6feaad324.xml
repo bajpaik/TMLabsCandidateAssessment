@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_80404_tmlabs.TMLabs_ExcelUtils</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>TMLabs_ExcelUtils</name>
+        <script><![CDATA[var TMLabs_ExcelUtils = Class.create();
+TMLabs_ExcelUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+    startProcessing: function(record) {
+        var status = record.status;
+        if (status == '3' || status == '4' || status == '8')
+            record.comments = 'Request was already closed. Please raise a new request';
+        if (status == '-5')
+            record.comments = 'Transform did not start as the request is still pending for approval';
+        if (status == '1') { //open state
+            record.status = '2'; //WIP state
+            record.comments = 'Transform started';
+            record.update();
+            var attachmentGr = new GlideRecord('sys_attachment');
+            attachmentGr.addQuery('content_type', 'CONTAINS', 'xlsx')
+                .addOrCondition('content_type', 'CONTAINS', 'spreadsheet')
+                .addOrCondition('content_type', 'CONTAINS', 'csv');
+            attachmentGr.addQuery('table_sys_id', record.sys_id);
+            attachmentGr.query();
+            if (attachmentGr.next()) {
+                var result = this.processVendorExcelSheet(attachmentGr.getUniqueValue(), record.header_row_start);
+
+                if (result.status == 1) {
+                    record.setValue('status', '3'); //closed complete
+                    record.setValue('short_description', 'Data loaded: ' + result.services);
+                } else
+                    record.setValue('status', '4'); //closed incomplete
+
+                record.comments = result.message;
+                record.closed = new GlideDateTime();
+            } else {
+                record.setValue('status', '4'); //closed incomplete
+                record.comments = 'Invalid Attachment. Please raise a new request';
+            }
+        }
+        record.update();
+    },
+
+
+    processVendorExcelSheet: function(attachmentSysID, headRow) {
+        var self = this,
+            errorMessage = '',
+            message;
+        try {
+            var content = self.readAttachmentContent(attachmentSysID, headRow);
+            if (content.length) {
+                var recordsTransformed = 0,
+                    sheetsProcessed = 0,
+                    ciServiceList = "";
+                content.forEach(function(sheet) {
+                    var sheetRows = sheet.sheet_data;
+                    if (sheetRows.length) {
+                        var modifiedResponse = self.replaceResponseKeys(sheetRows, self._getMappingObj());
+                        gs.info('modifiedResponse ' + JSON.stringify(modifiedResponse))
+                        if (modifiedResponse.length) {
+
+                            // gs.info('ciservicelist ', ciServiceList)
+                            //self._deleteVendorRecords(modifiedResponse[0]['vendor_number']);
+                            sheetsProcessed++;
+
+                            //**Insert Data into import set **//
+                            for (var row = 0; row < modifiedResponse.length; row++) {
+                                ciServiceList += modifiedResponse[row]['name'] + ',';
+                                var venImpSetTable = new GlideRecord('x_80404_tmlabs_ci_service_import_set');
+                                venImpSetTable.initialize();
+                                for (var j in modifiedResponse[row])
+                                    venImpSetTable.setValue(j, modifiedResponse[row][j]);
+                                venImpSetTable.insert();
+                                recordsTransformed++;
+                            }
+                        } else
+                            errorMessage = 'Skipped processing of sheet ' + sheet.sheet_name + ' as header(s) were not recognized. Please re-validate your excel sheet and raise a new request.';
+                    } else {
+                        errorMessage = 'Skipped processing of sheet ' + sheet.sheet_name + '  in the attachment, as did not contain any data or wasn\'t in a valid format';
+                    }
+                });
+                if (errorMessage != '')
+                    message = errorMessage;
+                else if (errorMessage != '' && sheetsProcessed > 0)
+                    message = errorMessage + ' \n Sheets processed: ' + sheetsProcessed + ', Records imported: ' + recordsTransformed;
+                else
+                    message = 'Sheets processed: ' + sheetsProcessed + ', Records imported: ' + '[code]<a href="/cmdb_ci_service.do?sysparm_query=nameIN' + encodeURIComponent(ciServiceList) + '" target="_blank">' + recordsTransformed + '</a>[/code]';
+
+                return {
+                    message: 'Transform Completed. ' + message,
+                    status: (errorMessage) ? -1 : 1,
+                    services: ciServiceList
+                };
+            } else {
+                return {
+                    message: 'Attachment content either empty or not in a valid format. Please contact your system admin for detailed error',
+                    status: -1
+                };
+            }
+        } catch (e) {
+            gs.error('processVendorExcelSheet error: ' + e.getErrorMessage());
+            return {
+                message: 'Error while processing attachment: ' + e.getErrorMessage(),
+                status: -1
+            };
+        }
+    },
+
+    readAttachmentContent: function(attachmentSysID, headerRowStart) {
+        var attachmentData = [];
+        var parser = new sn_impex.GlideExcelParser();
+        var attachment = new GlideSysAttachment();
+
+        var attachmentStream = attachment.getContentStream(attachmentSysID);
+        parser.setSource(attachmentStream);
+        var list_sheet_name = parser.getSheetNames();
+
+        // Iterate over each worksheet in the Excel workbook
+        for (var i = 0; i < list_sheet_name.length; i++) {
+            var sheetData = [],
+                obj = {};
+            obj.sheet_name = list_sheet_name[i];
+            parser.setSheetName(list_sheet_name[i]);
+            // Set the worksheet name to be parsed
+            parser.setHeaderRowNumber(headerRowStart - 1);
+            // Parse each worksheet set using setSheetName()
+            if (parser.parse()) {
+                //retrieve the column headers
+                var headers = parser.getColumnHeaders();
+                // Iterate over each row in the worksheet
+                while (parser.next()) {
+                    var rows = parser.getRow();
+                    sheetData.push(rows);
+                }
+                obj.sheet_data = sheetData;
+                attachmentData.push(obj);
+            } else
+                gs.error('readAttachmentContent function error ' + parser.getErrorMessage());
+        }
+        return attachmentData;
+    },
+
+    _getMappingObj: function() {
+        return {
+            "Name": "name",
+            "Business criticality": "business_criticality",
+            "Approval group": "approval_group",
+            "Service classification": "service_classification",
+            "Owned by": "owned_by",
+            "Operational status": "operational_status",
+        };
+    },
+
+    replaceResponseKeys: function(itemsAr, objMap) {
+        var newAR = [];
+        var keys = Object.keys(itemsAr[0]);
+        for (var i = 0; i < itemsAr.length; i++) {
+            var newObj = {};
+            keys.forEach(function(key) {
+                if (objMap[key] != undefined || objMap[key] != null)
+                    newObj[objMap[key]] = itemsAr[i][key];
+            });
+            if (Object.keys(newObj).length)
+                newAR.push(newObj);
+        }
+        return newAR;
+    },
+
+    runScheduleImport: function(jobId) {
+        var now_GR = new GlideRecord('sysauto_script');
+        if (!now_GR.get(jobId)) {
+            throw new Error('Unable to find import job');
+        }
+        gs.executeNow(now_GR);
+    },
+
+    type: 'TMLabs_ExcelUtils'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-28 03:18:40</sys_created_on>
+        <sys_id>20d073538378121073b8c6a6feaad324</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>TMLabs_ExcelUtils</sys_name>
+        <sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs">e27edc538334121073b8c6a6feaad356</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope>
+        <sys_update_name>sys_script_include_20d073538378121073b8c6a6feaad324</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-29 00:27:52</sys_updated_on>
+    </sys_script_include>
+</record_update>

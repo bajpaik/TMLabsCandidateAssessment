@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="7e0123938334121073b8c6a6feaad399" sys_domain="global" table="x_80404_tmlabs_ci_service_import" version="3" view="">
+        <sys_ui_annotation action="INSERT_OR_UPDATE">
+            <is_plain_text>false</is_plain_text>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-09-29 00:00:21</sys_created_on>
+            <sys_id>821d04fb83b0961073b8c6a6feaad3c8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-09-29 00:00:21</sys_updated_on>
+            <text>&lt;p&gt;&lt;span style="font-size: 10pt;"&gt;This form provides an ability for the users with admin to upload CI Services in cmdb_ci_service table.&lt;/span&gt;&lt;/p&gt;&#13;
+&lt;p&gt;&lt;span style="text-decoration: underline;"&gt;&lt;span style="font-size: 10pt;"&gt;&lt;em&gt;Instructions&lt;/em&gt;:&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&#13;
+&lt;ul style="list-style-position: inside;"&gt;&#13;
+&lt;li style="font-size: 10pt;"&gt;&lt;span style="font-size: 10pt;"&gt;Please be advised to upload only one Microsoft Excel in a format given &lt;a href="/kb?id=kb_article_view&amp;sysparm_article=KB0020948&amp;sys_kb_id=9c0a8bbcdb4b3490ce23cae51496191d" target="_blank" rel="noopener"&gt;here&lt;/a&gt;.&lt;/span&gt;&lt;/li&gt;&#13;
+&lt;li style="font-size: 10pt;"&gt;Multiple sheets can be added to an Excel spreadsheet.&lt;/li&gt;&#13;
+&lt;li style="font-size: 10pt;"&gt;File should not be encrypted and should be editable.&lt;/li&gt;&#13;
+&lt;/ul&gt;</text>
+            <type display_value="Info Box Blue">753f88a80f930000b12e6903cfe01206</type>
+        </sys_ui_annotation>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>821d04fb83b0961073b8c6a6feaad3c8</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-09-29 00:00:21</sys_created_on>
+            <sys_id>0a1d04fb83b0961073b8c6a6feaad3d0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_80404_tmlabs_ci_service_import" sys_domain="global" view="Default view">7e0123938334121073b8c6a6feaad399</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-09-29 00:00:21</sys_updated_on>
+            <sys_user/>
+            <type>annotation</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-09-29 00:00:21</sys_created_on>
+            <sys_id>8e1d04fb83b0961073b8c6a6feaad3d0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_80404_tmlabs_ci_service_import" sys_domain="global" view="Default view">7e0123938334121073b8c6a6feaad399</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-09-29 00:00:21</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>number</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-09-29 00:00:21</sys_created_on>
+            <sys_id>061d04fb83b0961073b8c6a6feaad3d1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_80404_tmlabs_ci_service_import" sys_domain="global" view="Default view">7e0123938334121073b8c6a6feaad399</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-09-29 00:00:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>header_row_start</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-09-29 00:00:21</sys_created_on>
+            <sys_id>8a1d04fb83b0961073b8c6a6feaad3d1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_80404_tmlabs_ci_service_import" sys_domain="global" view="Default view">7e0123938334121073b8c6a6feaad399</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-09-29 00:00:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-09-29 00:00:21</sys_created_on>
+            <sys_id>021d04fb83b0961073b8c6a6feaad3d2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_80404_tmlabs_ci_service_import" sys_domain="global" view="Default view">7e0123938334121073b8c6a6feaad399</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-09-29 00:00:21</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>run_as</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-09-29 00:00:21</sys_created_on>
+            <sys_id>021d48fb83b0961073b8c6a6feaad3c7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_80404_tmlabs_ci_service_import" sys_domain="global" view="Default view">7e0123938334121073b8c6a6feaad399</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-09-29 00:00:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>status</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-09-29 00:00:21</sys_created_on>
+            <sys_id>861d48fb83b0961073b8c6a6feaad3c7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_80404_tmlabs_ci_service_import" sys_domain="global" view="Default view">7e0123938334121073b8c6a6feaad399</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-09-29 00:00:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>closed</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-09-29 00:00:21</sys_created_on>
+            <sys_id>0e1d48fb83b0961073b8c6a6feaad3c7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_80404_tmlabs_ci_service_import" sys_domain="global" view="Default view">7e0123938334121073b8c6a6feaad399</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-09-29 00:00:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-09-29 00:00:21</sys_created_on>
+            <sys_id>821d48fb83b0961073b8c6a6feaad3c8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_80404_tmlabs_ci_service_import" sys_domain="global" view="Default view">7e0123938334121073b8c6a6feaad399</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-09-29 00:00:21</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>activity.xml</element>
+            <position>9</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-09-29 00:00:21</sys_created_on>
+            <sys_id>0a1d48fb83b0961073b8c6a6feaad3c8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter display_value="Activities (filtered)">444ea5c6bf310100e628555b3f0739d6</sys_ui_formatter>
+            <sys_ui_section caption="NULL" display_value="" name="x_80404_tmlabs_ci_service_import" sys_domain="global" view="Default view">7e0123938334121073b8c6a6feaad399</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-09-29 00:00:21</sys_updated_on>
+            <sys_user/>
+            <type>formatter</type>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_80404_tmlabs_ci_service_import</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-09-28 02:09:24</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7e0123938334121073b8c6a6feaad399</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_80404_tmlabs_ci_service_import</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs">e27edc538334121073b8c6a6feaad356</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope>
+            <sys_update_name>sys_ui_section_7e0123938334121073b8c6a6feaad399</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-09-28 02:09:24</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

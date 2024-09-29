@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
+    <m2m_sp_widget_dependency action="INSERT_OR_UPDATE">
+        <sp_dependency display_value="angular-tooltips-1.1.8">e28f735523311300ab65ff5e17bf651d</sp_dependency>
+        <sp_widget display_value="Copy of Business Services Status">c2ae14ff83b4961073b8c6a6feaad32b</sp_widget>
+        <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-29 01:17:04</sys_created_on>
+        <sys_id>4aaed4f783f4961073b8c6a6feaad344</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>angular-tooltips-1.1.8.Copy of Business Services Status</sys_name>
+        <sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs">e27edc538334121073b8c6a6feaad356</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope>
+        <sys_update_name>m2m_sp_widget_dependency_4aaed4f783f4961073b8c6a6feaad344</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-29 01:17:04</sys_updated_on>
+    </m2m_sp_widget_dependency>
+</record_update>
