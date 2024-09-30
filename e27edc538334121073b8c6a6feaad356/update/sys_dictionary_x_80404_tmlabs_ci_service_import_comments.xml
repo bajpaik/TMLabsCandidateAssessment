@@ -32,7 +32,7 @@
         <formula/>
         <function_definition/>
         <function_field>false</function_field>
-        <internal_type display_value="Journal">journal</internal_type>
+        <internal_type display_value="">journal_input</internal_type>
         <mandatory>false</mandatory>
         <max_length>4000</max_length>
         <name>x_80404_tmlabs_ci_service_import</name>
@@ -58,7 +58,7 @@
         <sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope>
         <sys_update_name>sys_dictionary_x_80404_tmlabs_ci_service_import_comments</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-30 02:45:16</sys_updated_on>
+        <sys_updated_on>2024-09-30 04:54:02</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

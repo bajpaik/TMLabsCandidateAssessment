@@ -53,18 +53,12 @@ TMLabs_ExcelUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
         try {
             var content = self.readAttachmentContent(attachmentSysID, headRow);
             if (content.length) {
-                var recordsTransformed = 0,
-                    sheetsProcessed = 0,
-                    ciServiceList = "";
+                var ciServiceList = "";
                 content.forEach(function(sheet) {
                     var sheetRows = sheet.sheet_data;
                     if (sheetRows.length) {
                         var modifiedResponse = self.replaceResponseKeys(sheetRows, self._getMappingObj());
-                        gs.info('modifiedResponse ' + JSON.stringify(modifiedResponse))
                         if (modifiedResponse.length) {
-
-                            // gs.info('ciservicelist ', ciServiceList)
-                            //self._deleteVendorRecords(modifiedResponse[0]['vendor_number']);
                             sheetsProcessed++;
 
                             //**Insert Data into import set **//
@@ -75,7 +69,6 @@ TMLabs_ExcelUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
                                 for (var j in modifiedResponse[row])
                                     venImpSetTable.setValue(j, modifiedResponse[row][j]);
                                 venImpSetTable.insert();
-                                recordsTransformed++;
                             }
                         } else
                             errorMessage = 'Skipped processing of sheet ' + sheet.sheet_name + ' as header(s) were not recognized. Please re-validate your excel sheet and raise a new request.';
@@ -86,9 +79,9 @@ TMLabs_ExcelUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
                 if (errorMessage != '')
                     message = errorMessage;
                 else if (errorMessage != '' && sheetsProcessed > 0)
-                    message = errorMessage + ' \n Sheets processed: ' + sheetsProcessed + ', Records imported: ' + recordsTransformed;
+                    message = errorMessage + ' \n Sheets processed: ' + sheetsProcessed ;
                 else
-                    message = 'Sheets processed: ' + sheetsProcessed + ', Records imported: ' + '[code]<a href="/cmdb_ci_service.do?sysparm_query=nameIN' + encodeURIComponent(ciServiceList) + '" target="_blank">' + recordsTransformed + '</a>[/code]';
+                    message = 'Sheets processed: ' + sheetsProcessed;
 
                 return {
                     message: 'Transform Completed. ' + message,
@@ -184,13 +177,13 @@ TMLabs_ExcelUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-09-28 03:18:40</sys_created_on>
         <sys_id>20d073538378121073b8c6a6feaad324</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>TMLabs_ExcelUtils</sys_name>
         <sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs">e27edc538334121073b8c6a6feaad356</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope>
         <sys_update_name>sys_script_include_20d073538378121073b8c6a6feaad324</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-30 02:49:35</sys_updated_on>
+        <sys_updated_on>2024-09-30 04:52:25</sys_updated_on>
     </sys_script_include>
 </record_update>

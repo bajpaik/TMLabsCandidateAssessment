@@ -12,6 +12,6 @@
             </choice>
         </element>
         <element default="1" label="Header Row Start" mandatory="true" max_length="40" name="header_row_start" type="integer"/>
-        <element label="Comments" max_length="4000" name="comments" type="journal"/>
+        <element label="Comments" max_length="4000" name="comments" type="journal_input"/>
     </element>
 </database>
