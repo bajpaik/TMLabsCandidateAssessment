@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="DELETE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_80404_tmlabs_ci_service_import</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_80404_tmlabs_ci_service_import">status=^EQ<item display_value="-- None --" endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value=""/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>TMLabs - Check for valid attachments</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+
+    // Add your code here
+    var hasValidAttachment = false;
+    var attachCount = new GlideRecord('sys_attachment');
+    attachCount.addQuery('table_sys_id', current.sys_id);
+    attachCount.addQuery('content_type', 'CONTAINS', 'xlsx').addOrCondition('content_type', 'CONTAINS', 'spreadsheet').addOrCondition('content_type', 'CONTAINS', 'csv');
+    attachCount.query();
+    // if no other attachments task does not have attachment
+    if (!attachCount.next() || attachCount.getRowCount() == 0) {
+        gs.addErrorMessage('Please attach the spreadsheet in the required format');
+    } else {
+        if (attachCount.getRowCount() > 1)
+            gs.addErrorMessage('More than one spreadsheet not allowed');
+        else {
+            hasValidAttachment = true;
+        }
+    }
+
+    if (!hasValidAttachment && current.operation() == 'insert') {
+        current.setAbortAction(true);
+    }
+
+    if (hasValidAttachment) {
+            current.status = '1'; //set to open state
+    }
+
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-28 05:54:49</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f43498e78334521073b8c6a6feaad382</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>TMLabs - Check for valid attachments</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs">e27edc538334121073b8c6a6feaad356</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope>
+        <sys_update_name>sys_script_f43498e78334521073b8c6a6feaad382</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-29 13:45:36</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="DELETE" query="documentkey=f43498e78334521073b8c6a6feaad382"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</application>
+        <file_path/>
+        <instance_id>c52434c7dbb006182f082a59139619c3</instance_id>
+        <instance_name>dev240362</instance_name>
+        <name>sys_script_f43498e78334521073b8c6a6feaad382</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;true&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;true&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;x_80404_tmlabs_ci_service_import&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;false&lt;/execute_function&gt;&lt;filter_condition table="x_80404_tmlabs_ci_service_import"&gt;status=^EQ&lt;item display_value="-- None --" endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value=""/&gt;&lt;item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/&gt;&lt;/filter_condition&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;TMLabs - Check for valid attachments&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+
+    // Add your code here
+    var hasValidAttachment = false;
+    var attachCount = new GlideRecord('sys_attachment');
+    attachCount.addQuery('table_sys_id', current.sys_id);
+    attachCount.addQuery('content_type', 'CONTAINS', 'xlsx').addOrCondition('content_type', 'CONTAINS', 'spreadsheet').addOrCondition('content_type', 'CONTAINS', 'csv');
+    attachCount.query();
+    // if no other attachments task does not have attachment
+    if (!attachCount.next() || attachCount.getRowCount() == 0) {
+        gs.addErrorMessage('Please attach the spreadsheet in the required format');
+    } else {
+        if (attachCount.getRowCount() &gt; 1)
+            gs.addErrorMessage('More than one spreadsheet not allowed');
+        else {
+            hasValidAttachment = true;
+        }
+    }
+
+    if (!hasValidAttachment &amp;&amp; current.operation() == 'insert') {
+        current.setAbortAction(true);
+    }
+
+    if (hasValidAttachment) {
+            current.status = '1'; //set to open state
+    }
+
+
+})(current, previous);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-09-28 05:54:49&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;f43498e78334521073b8c6a6feaad382&lt;/sys_id&gt;&lt;sys_mod_count&gt;10&lt;/sys_mod_count&gt;&lt;sys_name&gt;TMLabs - Check for valid attachments&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs"&gt;e27edc538334121073b8c6a6feaad356&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="TMLabs Candidate Assessment"&gt;e27edc538334121073b8c6a6feaad356&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_f43498e78334521073b8c6a6feaad382&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-09-29 13:45:36&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;before&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=f43498e78334521073b8c6a6feaad382"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>555939475</payload_hash>
+        <record_name>TMLabs - Check for valid attachments</record_name>
+        <reverted_from/>
+        <source>c76452f783305a1073b8c6a6feaad36d</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-29 13:45:36</sys_created_on>
+        <sys_id>bef90fff83709a1073b8c6a6feaad3df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1923e0790f70000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-29 13:45:36</sys_updated_on>
+        <type>Business Rule</type>
+        <update_guid>fef90fff4f709a103a022d54477d71de</update_guid>
+        <update_guid_history>fef90fff4f709a103a022d54477d71de:555939475,f8f78bbba4709a107d9298a87b60350f:1927164308,8906cb3b87709a100c5353f60126728a:-1526299840,8da543b732709a1047da17b5462a6c0b:-1907692830,ffe4877773709a10d1609734dc4c73bf:1897832372,9b191afff2b05a107358a16536325d47:-1560968171,9bd9b8e7a2fc521078bcdd77ccdd54fd:1897832372,ed877c2b1bbc52102ada28c0e20ae909:1216693250,06a3342b627c5210595c300f837ecdc8:-34553470,3def2c23ef7c521061187360612c6f0c:386651587,30a4d4a767345210463744596aee89ca:-1959964207</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-30 01:31:24</sys_created_on>
+        <sys_db_object display_value="" name="sys_script">sys_script</sys_db_object>
+        <sys_id>61eb2f5c87bd4cf48dbddc738e623890</sys_id>
+        <sys_metadata>f43498e78334521073b8c6a6feaad382</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>TMLabs - Check for valid attachments</sys_name>
+        <sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs">e27edc538334121073b8c6a6feaad356</sys_package>
+        <sys_parent display_value="">785023d38334121073b8c6a6feaad375</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope>
+        <sys_scope_delete display_value="">78a7d328f56b4de295623eee00c38e24</sys_scope_delete>
+        <sys_update_name>sys_script_f43498e78334521073b8c6a6feaad382</sys_update_name>
+        <sys_update_version display_value="sys_script_f43498e78334521073b8c6a6feaad382">bef90fff83709a1073b8c6a6feaad3df</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-30 01:31:24</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

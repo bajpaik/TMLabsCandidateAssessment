@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_number">
+    <sys_number action="DELETE">
+        <category display_value="" name="x_80404_tmlabs_ci_service_import">x_80404_tmlabs_ci_service_import</category>
+        <maximum_digits>7</maximum_digits>
+        <number>1000</number>
+        <prefix>TM</prefix>
+        <sys_class_name>sys_number</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-28 05:15:01</sys_created_on>
+        <sys_id>b58bc0a383f0521073b8c6a6feaad387</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>TM</sys_name>
+        <sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs">e27edc538334121073b8c6a6feaad356</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope>
+        <sys_update_name>sys_number_b58bc0a383f0521073b8c6a6feaad387</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-28 05:15:01</sys_updated_on>
+    </sys_number>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</application>
+        <file_path/>
+        <instance_id>c52434c7dbb006182f082a59139619c3</instance_id>
+        <instance_name>dev240362</instance_name>
+        <name>sys_number_b58bc0a383f0521073b8c6a6feaad387</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_number"><sys_number action="INSERT_OR_UPDATE"><category display_value="" name="x_80404_tmlabs_ci_service_import">x_80404_tmlabs_ci_service_import</category><maximum_digits>7</maximum_digits><number>1000</number><prefix>TM</prefix><sys_class_name>sys_number</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-09-28 05:15:01</sys_created_on><sys_id>b58bc0a383f0521073b8c6a6feaad387</sys_id><sys_mod_count>0</sys_mod_count><sys_name>TM</sys_name><sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs">e27edc538334121073b8c6a6feaad356</sys_package><sys_policy/><sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope><sys_update_name>sys_number_b58bc0a383f0521073b8c6a6feaad387</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-09-28 05:15:01</sys_updated_on></sys_number></record_update>]]></payload>
+        <payload_hash>-2095466883</payload_hash>
+        <record_name>TM</record_name>
+        <reverted_from/>
+        <source>627e1c978338121073b8c6a6feaad39b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-28 05:15:02</sys_created_on>
+        <sys_id>8a8b4ce383f0521073b8c6a6feaad321</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>192370dc5560000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-28 05:15:02</sys_updated_on>
+        <type>Number</type>
+        <update_guid>4e8b4ce371f05210c199d88dd6ee4e20</update_guid>
+        <update_guid_history>4e8b4ce371f05210c199d88dd6ee4e20:-2095466883</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-30 01:31:25</sys_created_on>
+        <sys_db_object display_value="" name="sys_number">sys_number</sys_db_object>
+        <sys_id>9c4c2d41cf3c41fb982ce9ebf950eac9</sys_id>
+        <sys_metadata>b58bc0a383f0521073b8c6a6feaad387</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>TM</sys_name>
+        <sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs">e27edc538334121073b8c6a6feaad356</sys_package>
+        <sys_parent display_value="">785023d38334121073b8c6a6feaad375</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope>
+        <sys_scope_delete display_value="">78a7d328f56b4de295623eee00c38e24</sys_scope_delete>
+        <sys_update_name>sys_number_b58bc0a383f0521073b8c6a6feaad387</sys_update_name>
+        <sys_update_version display_value="sys_number_b58bc0a383f0521073b8c6a6feaad387">8a8b4ce383f0521073b8c6a6feaad321</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-30 01:31:25</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

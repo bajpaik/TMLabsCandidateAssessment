@@ -5,7 +5,7 @@
         <action_delete>false</action_delete>
         <action_insert>true</action_insert>
         <action_query>false</action_query>
-        <action_update>true</action_update>
+        <action_update>false</action_update>
         <active>true</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
@@ -20,7 +20,7 @@
         </filter_condition>
         <is_rest>false</is_rest>
         <message/>
-        <name>TMLabs - Execute Import</name>
+        <name>TMLabs - Start CI Service Import</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -29,28 +29,28 @@
         <rest_service_text/>
         <rest_variables/>
         <role_conditions/>
-        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
-    new x_80404_tmlabs.TMLabs_ExcelUtils().runScheduleImport(current.sys_id);
+ new x_80404_tmlabs.TMLabs_ExcelUtils().startProcessing(current);
 
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-09-28 08:04:27</sys_created_on>
+        <sys_created_on>2024-09-30 02:33:49</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>cde07ca3837c521073b8c6a6feaad394</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_name>TMLabs - Execute Import</sys_name>
+        <sys_id>4db8b90883819e1073b8c6a6feaad3d7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>TMLabs - Start CI Service Import</sys_name>
         <sys_overrides/>
         <sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs">e27edc538334121073b8c6a6feaad356</sys_package>
         <sys_policy/>
         <sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope>
-        <sys_update_name>sys_script_cde07ca3837c521073b8c6a6feaad394</sys_update_name>
+        <sys_update_name>sys_script_4db8b90883819e1073b8c6a6feaad3d7</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-28 08:35:40</sys_updated_on>
+        <sys_updated_on>2024-09-30 02:33:49</sys_updated_on>
         <template/>
         <when>async_always</when>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=cde07ca3837c521073b8c6a6feaad394"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=4db8b90883819e1073b8c6a6feaad3d7"/>
 </record_update>

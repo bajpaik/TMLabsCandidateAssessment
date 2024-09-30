@@ -12,10 +12,10 @@ TMLabs_ExcelUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
 
     startProcessing: function(record) {
         var status = record.status;
-        if (status == '3' || status == '4' || status == '8')
+        if (status == '3' || status == '4')
             record.comments = 'Request was already closed. Please raise a new request';
-        if (status == '-5')
-            record.comments = 'Transform did not start as the request is still pending for approval';
+        if (status == '-1')
+            record.comments = 'Import scheduled at ' + record.run_time;
         if (status == '1') { //open state
             record.status = '2'; //WIP state
             record.comments = 'Transform started';
@@ -184,13 +184,13 @@ TMLabs_ExcelUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-09-28 03:18:40</sys_created_on>
         <sys_id>20d073538378121073b8c6a6feaad324</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>TMLabs_ExcelUtils</sys_name>
         <sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs">e27edc538334121073b8c6a6feaad356</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope>
         <sys_update_name>sys_script_include_20d073538378121073b8c6a6feaad324</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-29 00:27:52</sys_updated_on>
+        <sys_updated_on>2024-09-30 02:49:35</sys_updated_on>
     </sys_script_include>
 </record_update>

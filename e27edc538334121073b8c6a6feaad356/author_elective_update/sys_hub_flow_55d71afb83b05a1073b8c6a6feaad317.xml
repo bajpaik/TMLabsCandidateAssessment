@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="DELETE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <annotation/>
+        <attributes>labelCacheCleanUpExecuted=true</attributes>
+        <authored_on_release_version>25000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority/>
+        <generation_source/>
+        <internal_name>create_ci_services</internal_name>
+        <label_cache>[]</label_cache>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <name>Create CI Services</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-29 10:06:30</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>55d71afb83b05a1073b8c6a6feaad317</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Create CI Services</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs">e27edc538334121073b8c6a6feaad356</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope>
+        <sys_update_name>sys_hub_flow_55d71afb83b05a1073b8c6a6feaad317</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-29 10:06:30</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow>
+    <sys_translated_text action="DELETE" query="documentkey=55d71afb83b05a1073b8c6a6feaad317"/>
+    <sys_variable_value action="DELETE" query="document_key=55d71afb83b05a1073b8c6a6feaad317"/>
+    <sys_hub_trigger_instance action="DELETE" query="flow=55d71afb83b05a1073b8c6a6feaad317"/>
+    <sys_hub_flow_stage action="DELETE" query="flow=55d71afb83b05a1073b8c6a6feaad317"/>
+    <sys_flow_cat_variable_model action="DELETE" query="id=55d71afb83b05a1073b8c6a6feaad317^sys_idNOT INd1d71afb83b05a1073b8c6a6feaad318"/>
+    <sys_flow_cat_variable_model action="DELETE">
+        <id>55d71afb83b05a1073b8c6a6feaad317</id>
+        <name>Create CI Services</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-29 10:06:30</sys_created_on>
+        <sys_id>d1d71afb83b05a1073b8c6a6feaad318</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-29 10:06:30</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="DELETE" query="flow_catalog_model=d1d71afb83b05a1073b8c6a6feaad318"/>
+    <sys_hub_flow_input action="DELETE" query="model=55d71afb83b05a1073b8c6a6feaad317"/>
+    <sys_hub_flow_output action="DELETE" query="model=55d71afb83b05a1073b8c6a6feaad317"/>
+    <sys_hub_alias_mapping action="DELETE" query="source_id=55d71afb83b05a1073b8c6a6feaad317"/>
+    <sys_hub_action_instance action="DELETE" query="flow=55d71afb83b05a1073b8c6a6feaad317"/>
+    <sys_hub_sub_flow_instance action="DELETE" query="flow=55d71afb83b05a1073b8c6a6feaad317"/>
+    <sys_hub_flow_logic action="DELETE" query="flow=55d71afb83b05a1073b8c6a6feaad317"/>
+    <sys_hub_pill_compound action="DELETE" query="attached_to=55d71afb83b05a1073b8c6a6feaad317"/>
+    <sys_hub_flow_variable action="DELETE" query="model=55d71afb83b05a1073b8c6a6feaad317"/>
+    <sys_documentation action="DELETE" query="name=var__m_sys_hub_flow_input_55d71afb83b05a1073b8c6a6feaad317"/>
+    <sys_choice action="DELETE" query="name=var__m_sys_hub_flow_input_55d71afb83b05a1073b8c6a6feaad317"/>
+    <sys_documentation action="DELETE" query="name=var__m_sys_hub_flow_output_55d71afb83b05a1073b8c6a6feaad317"/>
+    <sys_choice action="DELETE" query="name=var__m_sys_hub_flow_output_55d71afb83b05a1073b8c6a6feaad317"/>
+    <sys_flow_trigger_plan action="DELETE" query="plan_id=55d71afb83b05a1073b8c6a6feaad317"/>
+    <sys_flow_subflow_plan action="DELETE" query="plan_id=55d71afb83b05a1073b8c6a6feaad317"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</application>
+        <file_path/>
+        <instance_id>c52434c7dbb006182f082a59139619c3</instance_id>
+        <instance_name>dev240362</instance_name>
+        <name>sys_hub_flow_55d71afb83b05a1073b8c6a6feaad317</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow"><sys_hub_flow action="INSERT_OR_UPDATE"><access>public</access><acls/><active>false</active><annotation/><attributes>labelCacheCleanUpExecuted=true</attributes><authored_on_release_version>25000</authored_on_release_version><callable_by_client_api>false</callable_by_client_api><category/><compiler_build/><copied_from/><copied_from_name/><description/><display_name_after_preview/><flow_priority/><generation_source/><internal_name>create_ci_services</internal_name><label_cache>[]</label_cache><latest_snapshot/><master_snapshot/><name>Create CI Services</name><natlang/><outputs/><pre_compiled>false</pre_compiled><remote_trigger_id/><run_as>user</run_as><run_with_roles/><sc_callable>false</sc_callable><show_draft_actions>false</show_draft_actions><show_triggered_flows>false</show_triggered_flows><status>draft</status><substatus/><sys_class_name>sys_hub_flow</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-09-29 10:06:30</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>55d71afb83b05a1073b8c6a6feaad317</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Create CI Services</sys_name><sys_overrides/><sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs">e27edc538334121073b8c6a6feaad356</sys_package><sys_policy/><sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope><sys_update_name>sys_hub_flow_55d71afb83b05a1073b8c6a6feaad317</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-09-29 10:06:30</sys_updated_on><type>flow</type></sys_hub_flow><sys_translated_text action="delete_multiple" query="documentkey=55d71afb83b05a1073b8c6a6feaad317"/><sys_variable_value action="delete_multiple" query="document_key=55d71afb83b05a1073b8c6a6feaad317"/><sys_hub_trigger_instance action="delete_multiple" query="flow=55d71afb83b05a1073b8c6a6feaad317"/><sys_hub_flow_stage action="delete_multiple" query="flow=55d71afb83b05a1073b8c6a6feaad317"/><sys_flow_cat_variable_model action="delete_multiple" query="id=55d71afb83b05a1073b8c6a6feaad317^sys_idNOT INd1d71afb83b05a1073b8c6a6feaad318"/><sys_flow_cat_variable_model action="INSERT_OR_UPDATE"><id>55d71afb83b05a1073b8c6a6feaad317</id><name>Create CI Services</name><sys_created_by>admin</sys_created_by><sys_created_on>2024-09-29 10:06:30</sys_created_on><sys_id>d1d71afb83b05a1073b8c6a6feaad318</sys_id><sys_mod_count>0</sys_mod_count><sys_scope/><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-09-29 10:06:30</sys_updated_on></sys_flow_cat_variable_model><sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=d1d71afb83b05a1073b8c6a6feaad318"/><sys_hub_flow_input action="delete_multiple" query="model=55d71afb83b05a1073b8c6a6feaad317"/><sys_hub_flow_output action="delete_multiple" query="model=55d71afb83b05a1073b8c6a6feaad317"/><sys_hub_alias_mapping action="delete_multiple" query="source_id=55d71afb83b05a1073b8c6a6feaad317"/><sys_hub_action_instance action="delete_multiple" query="flow=55d71afb83b05a1073b8c6a6feaad317"/><sys_hub_sub_flow_instance action="delete_multiple" query="flow=55d71afb83b05a1073b8c6a6feaad317"/><sys_hub_flow_logic action="delete_multiple" query="flow=55d71afb83b05a1073b8c6a6feaad317"/><sys_hub_pill_compound action="delete_multiple" query="attached_to=55d71afb83b05a1073b8c6a6feaad317"/><sys_hub_flow_variable action="delete_multiple" query="model=55d71afb83b05a1073b8c6a6feaad317"/><sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_55d71afb83b05a1073b8c6a6feaad317"/><sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_55d71afb83b05a1073b8c6a6feaad317"/><sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_55d71afb83b05a1073b8c6a6feaad317"/><sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_55d71afb83b05a1073b8c6a6feaad317"/><sys_flow_trigger_plan action="delete_multiple" query="plan_id=55d71afb83b05a1073b8c6a6feaad317"/><sys_flow_subflow_plan action="delete_multiple" query="plan_id=55d71afb83b05a1073b8c6a6feaad317"/></record_update>]]></payload>
+        <payload_hash>8507991</payload_hash>
+        <record_name>Create CI Services</record_name>
+        <reverted_from/>
+        <source>c76452f783305a1073b8c6a6feaad36d</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-29 10:06:31</sys_created_on>
+        <sys_id>ddd71afb83b05a1073b8c6a6feaad31d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1923d3efc520000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-29 10:06:31</sys_updated_on>
+        <type>Flow</type>
+        <update_guid>11d71afb3fb05a10adb47c1092174a1d</update_guid>
+        <update_guid_history>11d71afb3fb05a10adb47c1092174a1d:8507991</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-29 10:13:45</sys_created_on>
+        <sys_db_object display_value="" name="sys_hub_flow">sys_hub_flow</sys_db_object>
+        <sys_id>1b226b49fa0040428c20b93806dc6369</sys_id>
+        <sys_metadata>55d71afb83b05a1073b8c6a6feaad317</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Create CI Services</sys_name>
+        <sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs">e27edc538334121073b8c6a6feaad356</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope>
+        <sys_scope_delete display_value="">78a7d328f56b4de295623eee00c38e24</sys_scope_delete>
+        <sys_update_name>sys_hub_flow_55d71afb83b05a1073b8c6a6feaad317</sys_update_name>
+        <sys_update_version display_value="sys_hub_flow_55d71afb83b05a1073b8c6a6feaad317">ddd71afb83b05a1073b8c6a6feaad31d</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-29 10:13:45</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
