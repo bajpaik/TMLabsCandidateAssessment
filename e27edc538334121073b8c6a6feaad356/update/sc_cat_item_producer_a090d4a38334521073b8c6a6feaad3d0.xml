@@ -77,7 +77,11 @@
         <sc_ic_item_staging/>
         <sc_ic_version/>
         <sc_template/>
-        <script/>
+        <script><![CDATA[if (producer.schedule_for_later == 'true') {
+    current.status = '-1'; //set pending state
+    current.scheduled_at = producer.schedule_at;
+} else
+    current.status = '1'; //set open state]]></script>
         <short_description>This form provides an ability for the users with admin to upload CI Services into the cmdb_ci_service table.</short_description>
         <show_variable_help_on_load>false</show_variable_help_on_load>
         <start_closed>false</start_closed>
@@ -86,14 +90,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-09-28 05:40:48</sys_created_on>
         <sys_id>a090d4a38334521073b8c6a6feaad3d0</sys_id>
-        <sys_mod_count>35</sys_mod_count>
+        <sys_mod_count>63</sys_mod_count>
         <sys_name>TMLabs CI Service Import</sys_name>
         <sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs">e27edc538334121073b8c6a6feaad356</sys_package>
         <sys_policy/>
         <sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope>
         <sys_update_name>sc_cat_item_producer_a090d4a38334521073b8c6a6feaad3d0</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-30 02:55:15</sys_updated_on>
+        <sys_updated_on>2024-09-30 12:41:55</sys_updated_on>
         <table_name>x_80404_tmlabs_ci_service_import</table_name>
         <taxonomy_topic/>
         <template/>
@@ -101,7 +105,7 @@
         <type>item</type>
         <use_sc_layout>true</use_sc_layout>
         <vendor/>
-        <version>36</version>
+        <version>64</version>
         <view/>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>

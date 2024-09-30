@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element audit="true" db_object_id="089b298c830d5e1073b8c6a6feaad31c" label="CI Service Import" max_length="40" name="x_80404_tmlabs_ci_service_import" type="collection">
-        <element label="Closed" max_length="40" name="closed" read_only="true" type="glide_date_time"/>
+        <element label="Scheduled at" max_length="40" name="scheduled_at" read_only="true" type="glide_date_time"/>
+        <element label="Completed" max_length="40" name="closed" read_only="true" type="glide_date_time"/>
         <element default="javascript:getNextObjNumberPadded();" display="true" dynamic_default_value="fdcb83a85f220100a9ad2572f2b4773c" label="Number" max_length="40" name="number" read_only="true" type="string" use_dynamic_default="true"/>
         <element choice="1" label="Status" max_length="40" name="status" read_only="true" type="choice">
             <choice>

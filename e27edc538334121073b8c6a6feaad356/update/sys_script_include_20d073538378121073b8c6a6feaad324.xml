@@ -14,9 +14,8 @@ TMLabs_ExcelUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
         var status = record.status;
         if (status == '3' || status == '4')
             record.comments = 'Request was already closed. Please raise a new request';
-        if (status == '-1')
-            record.comments = 'Import scheduled at ' + record.run_time;
-        if (status == '1') { //open state
+
+        if (status == '1' || status == '-1') { //open or pending state
             record.status = '2'; //WIP state
             record.comments = 'Transform started';
             record.update();
@@ -29,10 +28,9 @@ TMLabs_ExcelUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
             if (attachmentGr.next()) {
                 var result = this.processVendorExcelSheet(attachmentGr.getUniqueValue(), record.header_row_start);
 
-                if (result.status == 1) {
+                if (result.status == 1)
                     record.setValue('status', '3'); //closed complete
-                    record.setValue('short_description', 'Data loaded: ' + result.services);
-                } else
+                else
                     record.setValue('status', '4'); //closed incomplete
 
                 record.comments = result.message;
@@ -45,6 +43,9 @@ TMLabs_ExcelUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
         record.update();
     },
 
+    scheduleProcessing: function(current) {
+        gs.eventQueueScheduled('x_80404_tmlabs.schedule_ci_import', current, '', '', current.scheduled_at);
+    },
 
     processVendorExcelSheet: function(attachmentSysID, headRow) {
         var self = this,
@@ -54,6 +55,7 @@ TMLabs_ExcelUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
             var content = self.readAttachmentContent(attachmentSysID, headRow);
             if (content.length) {
                 var ciServiceList = "";
+                sheetsProcessed = 0;
                 content.forEach(function(sheet) {
                     var sheetRows = sheet.sheet_data;
                     if (sheetRows.length) {
@@ -79,7 +81,7 @@ TMLabs_ExcelUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
                 if (errorMessage != '')
                     message = errorMessage;
                 else if (errorMessage != '' && sheetsProcessed > 0)
-                    message = errorMessage + ' \n Sheets processed: ' + sheetsProcessed ;
+                    message = errorMessage + ' \n Sheets processed: ' + sheetsProcessed;
                 else
                     message = 'Sheets processed: ' + sheetsProcessed;
 
@@ -177,13 +179,13 @@ TMLabs_ExcelUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-09-28 03:18:40</sys_created_on>
         <sys_id>20d073538378121073b8c6a6feaad324</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>27</sys_mod_count>
         <sys_name>TMLabs_ExcelUtils</sys_name>
         <sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs">e27edc538334121073b8c6a6feaad356</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope>
         <sys_update_name>sys_script_include_20d073538378121073b8c6a6feaad324</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-09-30 04:52:25</sys_updated_on>
+        <sys_updated_on>2024-09-30 13:12:19</sys_updated_on>
     </sys_script_include>
 </record_update>

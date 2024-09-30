@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_ui_policy_action">
+    <catalog_ui_policy_action action="INSERT_OR_UPDATE">
+        <catalog_item display_value="TMLabs CI Service Import">a090d4a38334521073b8c6a6feaad3d0</catalog_item>
+        <catalog_variable>IO:6df01b8c8381125073b8c6a6feaad39a</catalog_variable>
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field/>
+        <field_message>Please enter a time when the import will commence.  </field_message>
+        <field_message_type>none</field_message_type>
+        <mandatory>true</mandatory>
+        <order>100</order>
+        <sys_class_name>catalog_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-09-30 08:58:34</sys_created_on>
+        <sys_id>df81138083c1125073b8c6a6feaad316</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>schedule_at</sys_name>
+        <sys_package display_value="TMLabs Candidate Assessment" source="x_80404_tmlabs">e27edc538334121073b8c6a6feaad356</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="TMLabs Candidate Assessment">e27edc538334121073b8c6a6feaad356</sys_scope>
+        <sys_update_name>catalog_ui_policy_action_df81138083c1125073b8c6a6feaad316</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-09-30 09:48:24</sys_updated_on>
+        <table/>
+        <ui_policy display_value="Show time field if scheduled for later">ca515b0083c1125073b8c6a6feaad383</ui_policy>
+        <value/>
+        <value_action>ignore</value_action>
+        <variable>schedule_at</variable>
+        <variable_set/>
+        <visible>true</visible>
+    </catalog_ui_policy_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=df81138083c1125073b8c6a6feaad316"/>
+</record_update>
